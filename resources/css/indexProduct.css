@@ -1,0 +1,233 @@
+header {
+    background-image: url("../../public/images/productosbackground.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 15rem;
+}
+
+.titulo {
+    margin-top: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el título perfectamente */
+    color: #ffffff;
+    font-size: 4rem;
+    font-family: serif;
+    font-weight: bolder;
+    line-height: 0.8;
+    text-shadow: 0 0 40px #232323c7;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 1.5rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.titulo h1 {
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    padding: 20px 0; /* Ajusta el espacio superior e inferior */
+}
+
+.filters {
+    display: flex;
+    flex-direction: row; /* ← Este es el único cambio necesario aquí */
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+}
+
+
+.search-box input {
+    min-width: 400px;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .search-box input {
+        min-width: 350px;
+    }
+}
+
+.filter-selects {
+    display: flex;
+    flex-direction: row; /* ← Cambia esto para que los select estén en fila */
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .filter-selects {
+        flex-direction: column;
+    }
+}
+
+.filter-selects select {
+    width: auto; /* ← Deja que se ajuste automáticamente al contenido */
+    min-width: 200px; /* ← O define un ancho mínimo cómodo */
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.products {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 50px; /* Espacio entre tarjetas */
+    max-width: 900px; /* Ajusta el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el grid en la página */
+}
+
+/* Para móviles (1 sola columna) */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cardproduct {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(50% - 10px); /* Hace que cada tarjeta ocupe el 50% del contenedor con espacio entre ellas */
+    max-width: 400px;
+}
+ 
+@media (max-width: 768px) {
+    .cardproduct {
+        min-width: 300px;
+    }
+}
+
+.img {
+    width: 100%;
+    height: 150px; /* Ajusta la altura según lo necesites */
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.text {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+}
+
+.text .h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+.text .p {
+    margin: 0;
+    font-family: 'Lucida Sans' sans-serif;
+    color: #999999;
+    font-size: 15px;
+}
+
+.cardproduct:hover {
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Botón para abrir la modal */
+.btn {
+    padding: 10px 20px;
+    background-color: #f1396d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #d33360;
+}
+
+/* Estilos generales del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    opacity: 0; /* Asegurar que esté completamente invisible */
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s;
+    position: fixed;
+    z-index: 9999; /* Se sobrepone a todo */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Ocupa todo el ancho */
+    height: 100vh; /* Ocupa todo el alto */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex; /* Se mostrará cuando agreguemos la clase "show" */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenedor del contenido del modal */
+.modal-content {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    width: 60%; /* Más ancho */
+    max-width: 1500px; /* Ancho máximo */
+    position: relative;
+    height: 75%;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%; /* Más ancho */
+        height: 90%;
+    }
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+}
+
+.close:hover {
+    color: red;
+}

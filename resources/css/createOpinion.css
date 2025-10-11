@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+
+  }
+  
+  .formCrearOpinion-Container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Centrado automático */
+    padding: 20px;
+    text-align: center; /* Para centrar textos como el botón */
+  }
+
+  /* Título del formulario */
+  .form-title {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  /* Grupos de formulario */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Campos de entrada */
+  .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #f2f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #20c997;
+  }
+  
+  /* Área de texto */
+  textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  /* Estilos para las estrellas */
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 100px; /* MÁS separación */
+    align-items: center; /* centra las estrellas verticalmente */
+    position: relative; /* importante si tienes inputs invisibles */
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    position: relative;
+    width: 1em;
+    font-size: 3rem;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .rating label::before {
+    content: "\2605"; /* Carácter Unicode para estrella */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .rating input:checked ~ label::before,
+  .rating label:hover ~ label::before,
+  .rating label:hover::before {
+    color: gold;
+  }
+
+  /* Estilos de botones */
+  .btn {
+    background-color: #f1396d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: #db3664;
+  }
+  
+  /* Botón de envío */
+  .submit-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
+    display: block;
+  }

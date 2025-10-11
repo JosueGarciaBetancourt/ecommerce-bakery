@@ -1,0 +1,70 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Contenedor de cada pedido */
+.card-pedido {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.card-pedido:hover {
+    transform: scale(1.01);
+}
+
+/* Títulos */
+.card-pedido h5 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card-pedido p {
+    margin: 4px 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Botón */
+.card-pedido a.btn {
+    background-color: #f1396d;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.card-pedido a.btn:hover {
+    background-color: #d72f5d;
+}
+
+/* Mensaje vacío */
+.no-pedidos {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    color: #777;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-pedido {
+        padding: 15px;
+    }
+
+    .card-pedido h5 {
+        font-size: 1rem;
+    }
+}

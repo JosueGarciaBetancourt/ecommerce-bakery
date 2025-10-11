@@ -1,0 +1,77 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Caja contenedora */
+.caja2 {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Títulos */
+.caja2 h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Texto general */
+.caja2 p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Tabla de productos */
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+}
+
+table.table thead {
+    background-color: #f1396d;
+    color: white;
+}
+
+table.table th,
+table.table td {
+    padding: 12px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+/* Botón de volver */
+.btn-secondary {
+    background-color: #f1396d;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #d72f5d;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+    .caja2 {
+        padding: 15px;
+    }
+
+    table.table th,
+    table.table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,216 @@
+header {
+    background-image: url("../../public/images/productosbackground.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 13rem;
+}
+
+.titulo {
+    margin-top: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el título perfectamente */
+    color: #ffffff;
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: bolder;
+    line-height: 0.8;
+    text-shadow: 0 0 40px #232323c7;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 1.5rem;
+    }
+}
+
+.titulo h1 {
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    padding: 20px 0; /* Ajusta el espacio superior e inferior */
+}
+
+.admin-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.producto-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+}
+
+
+/* Imágenes más pequeñas */
+.imagenes-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagen-principal img {
+    width: 400px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .producto-container {
+        flex-direction: column;
+    }
+
+    .imagen-principal img {
+        width: 250px;
+        border-radius: 10px;
+    }
+}
+
+
+/* Descripción del producto */
+.descripcion-producto {
+    max-width: 600px;
+    font-size: 1.1em; /* Reducido */
+    line-height: 1.4;
+    padding-left: 40px;
+}
+
+/* Texto de "Torta de Chocolate" más pequeño */
+.titulo-producto {
+    font-size: 1.7em; /* Reducido */
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Marca */
+.marca {
+    font-size: 1em; /* Reducido */
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Precio */
+.precio {
+    margin: 0;
+    font-size: 2em; /* Reducido */
+    color: red;
+    font-weight: bold;
+}
+
+/* Contenedor de cantidad */
+.cantidad-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.cantidad-container input {
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    font-size: 1em; /* Reducido */
+    margin: 0 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.cantidad-container button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em; /* Reducido */
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.cantidad-container button:hover {
+    background-color: #bbb;
+}
+
+/* Botón "Agregar al Carrito" */
+.boton-agregar {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1.3em; /* Reducido */
+    color: white;
+    background-color: #ff3366;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.boton-agregar:hover {
+    background-color: #cc0044;
+}
+
+.AddCartButton {
+    margin-top: 20px;
+}
+
+/* Estilos generales del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    opacity: 0; /* Asegurar que esté completamente invisible */
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s;
+    position: fixed;
+    z-index: 9999; /* Se sobrepone a todo */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Ocupa todo el ancho */
+    height: 100vh; /* Ocupa todo el alto */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex; /* Se mostrará cuando agreguemos la clase "show" */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenedor del contenido del modal */
+.modal-content {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    width: 60%; /* Más ancho */
+    max-width: 1500px; /* Ancho máximo */
+    position: relative;
+    height: 75%;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%; /* Más ancho */
+        height: 90%;
+    }
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+}
+
+.close:hover {
+    color: red;
+}
