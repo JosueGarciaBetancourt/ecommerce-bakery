@@ -16,4 +16,9 @@ class Opinion extends Model
     {
         return $this->belongsTo(User::class, 'usuario_id');
     }
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class, 'producto_id');
+    }
+
 }

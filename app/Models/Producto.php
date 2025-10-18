@@ -21,4 +21,10 @@ class Producto extends Model
         return $this->hasMany(CartItem::class);
     }
 
+    public function opinions()
+    {
+        return $this->hasMany(Opinion::class, 'producto_id');
+    }
+
+
 }

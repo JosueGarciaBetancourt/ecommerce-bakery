@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('opinions', function (Blueprint $table) {
             $table->id(); // Crea una columna 'id' como llave primaria
             $table->unsignedBigInteger('usuario_id'); // Asegúrate de que sea 'unsignedBigInteger'
+            $table->unsignedBigInteger('producto_id');
             $table->text('opiniontext');
             $table->integer('estrellas');
             $table->timestamps();

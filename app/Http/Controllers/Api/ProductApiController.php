@@ -6,11 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class ProductApiController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Producto::query();
+        $query = Producto::query()
+            ->withAvg('opinions as rating', 'estrellas'); // 🔹 Promedio de estrellas
 
         if ($request->has('category') && $request->category != '') {
             $query->where('category', $request->category);
@@ -34,10 +37,9 @@ class ProductApiController extends Controller
         ]);
     }
 
-    //Mostrar un producto específico
     public function show($id)
     {
-        $producto = Producto::find($id);
+        $producto = Producto::withAvg('opinions as rating', 'estrellas')->find($id);
 
         if (!$producto) {
             return response()->json([
